@@ -50,6 +50,9 @@ SOFTWARE. */
             let msg = '';
             bundle.map(e => msg += e.signatureMessageFragment)
             console.log(msg);
+			      if(msg.length%2!=0){
+				      msg= msg.slice(0,-1)
+			      }
             msg = converter.trytesToAscii(msg)
             javascript: document.open('text/html'); document.write(msg); document.close();
           })
